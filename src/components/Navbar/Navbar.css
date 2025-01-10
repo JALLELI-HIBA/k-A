@@ -1,0 +1,45 @@
+nav {
+    width: 100%;
+    /* background: #333; */
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+    margin-top: -20px;
+
+
+}
+
+.logo {
+    width: 135px;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 5px 20px;
+    font-size: 16px;
+}
+
+.dark-nav {
+    background: #212EA0;
+    transition: 0.5s;
+}
+
+.menu-icon {
+    display: none;
+}
+
+@media (max-width: 1000px) {
+    .logo {
+        width: 140px;
+    }
+    nav ul li {
+        margin: 10px 15px;
+    }
+}
+
