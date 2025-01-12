@@ -19,13 +19,17 @@ const ContactUs = () => {
     const templateID = 'template_5mn4mgo';
     const publicKey = '35jHQGDMT990ayOtC';
 
-
     emailjs
-      .send(serviceID, templateID, {
-        name: formData.name,
-        email: formData.email,
-        message: formData.message,
-      }, publicKey)
+      .send(
+        serviceID,
+        templateID,
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+        publicKey
+      )
       .then(
         (result) => {
           console.log('Email sent:', result.text);
@@ -40,7 +44,8 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="contact-us-container">
+    // Add the `id` here for smooth scrolling
+    <div id="contact" className="contact-us-container">
       <h2>Contact Us</h2>
       <form onSubmit={handleSubmit}>
         <input
