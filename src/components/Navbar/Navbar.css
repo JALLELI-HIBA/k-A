@@ -1,7 +1,7 @@
+/* Navbar Styles */
 nav {
     width: 100%;
     height: 15%;
-    /* background: #333; */
     color: #fff;
     position: fixed;
     top: 0;
@@ -11,31 +11,83 @@ nav {
     justify-content: space-between;
     z-index: 10;
     margin-top: -10px;
-
-
-
+    transition: transform 0.3s ease, visibility 0.3s ease;
 }
 
+/* Logo Styles */
 .logo {
     width: 135px;
+    transition: width 0.3s ease;
+}
+
+.sidebar-logo {
+    width: 50px; /* Smaller logo for sidebar */
+}
+
+/* Navbar Links */
+nav ul {
+    display: flex; /* Align links horizontally before scroll */
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
-    display: inline-block;
     list-style: none;
     margin: 5px 20px;
     font-size: 16px;
+    transition: transform 0.3s ease, margin 0.3s ease;
 }
 
-.dark-nav {
-    background: #f2f2f2;
-    transition: 0.5s;
+/* Sidebar Styles */
+nav ul.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 150px; /* Sidebar width */
+    height: 100%;
+    background-color: transparent; /* Sidebar background color */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align items */
+    padding-top: 50px;
+    z-index: 20;
+    transition: all 0.5s ease-in-out;
+    margin-top: 10%;
 }
 
-.menu-icon {
-    display: none;
+/* Sidebar Links - Rotated 270 degrees */
+nav ul.sidebar li {
+    margin: 20px 0; /* Increase margin for vertical spacing between links */
+    font-size: 18px;
+    transform: rotate(270deg); /* Rotate the links 270 degrees */
+    transition: transform 0.3s ease, margin 0.3s ease;
 }
 
+/* When Navbar is Scrolled, Adjust Links to Appear Vertically with Rotation */
+nav.scrolled ul.sidebar {
+    flex-direction: column; /* Ensure links are stacked vertically */
+    padding-top: 0; /* Remove extra padding */
+}
+
+nav.scrolled ul.sidebar li {
+    margin: 50px 0; /* Increase margin for vertical spacing between links */
+    transform: rotate(270deg); /* Keep rotation at 270 degrees */
+}
+
+/* Links Styling */
+nav ul.sidebar li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+/* Hide Navbar on Scroll */
+nav.scrolled {
+    transform: translateY(-100%); /* Hide navbar */
+}
+
+/* Responsive Styles */
 @media (max-width: 1000px) {
     .logo {
         width: 140px;
@@ -44,4 +96,3 @@ nav ul li {
         margin: 10px 15px;
     }
 }
-
