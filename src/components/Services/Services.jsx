@@ -4,7 +4,7 @@ import services from '../../assets/import-export.jpg';
 
 const Services = () => {
   return (
-    <div className="services-container">
+    <div  id="services" className="services-container">
       <h1 className="services-title">Our Services</h1>
       <div className="content-wrapper">
         <div className="text-section">

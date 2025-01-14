@@ -1,81 +1,72 @@
-import React, { useState } from 'react';
-import emailjs from 'emailjs-com';
-import './ContactUs.css';
+import React from 'react';
+import '../Contact Us/ContactUs.css';
+import msg_icon from '../../assets/logo.png'
+import mail_icon from '../../assets/logo.png'
+import phone_icon from '../../assets/logo.png'
+import location_icon from '../../assets/logo.png'
 
-const ContactUs = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState('');
+const Contact = () => {
+  
+    const [result, setResult] = React.useState("");
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+    const onSubmit = async (event) => {
+      event.preventDefault();
+      setResult("Sending....");
+      const formData = new FormData(event.target);
+  
+      formData.append("access_key", "4c1c933a-dfad-4c34-a9c8-53c7375620b5");   
+  
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+  
+      const data = await response.json();
+  
+      if (data.success) {
+        setResult("Email sent Successfully");
+        event.target.reset();
+      } else {
+        console.log("Error", data);
+        setResult(data.message);
+      }
+    };
+  
+  
+  
+    return (
+    <div className='contact'>
+      <div className="contact-col">
+        <h3>Send us a message <img src={msg_icon} alt="" /> </h3>
+        <p>
+          If you have any questions, feedback, or require further assistance, we’d love to hear from you! 
+          Our team is here to ensure your experience with us is seamless and enjoyable. 
+          Please fill out the form below with your details and message, and we’ll get back to you as soon as possible. 
+          Whether it’s a query, a suggestion, or simply a hello, we’re always happy to connect with you!
+        </p>
+        <ul>
+            <li> <img src={mail_icon} alt="" />  jalleli.hibaa@gmail.com</li>
+            <li>  <img src={phone_icon} alt="" />  Phone: 123-456-7890</li>
+            <li> <img src={location_icon} alt="" />Harrouch  elkef <br/> Tunisia </li>
+            
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Directly pass the service ID, template ID, and public key here
-    const serviceID = 'service_hnm7yb4';
-    const templateID = 'template_5mn4mgo';
-    const publicKey = '35jHQGDMT990ayOtC';
-
-    emailjs
-      .send(
-        serviceID,
-        templateID,
-        {
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-        },
-        publicKey
-      )
-      .then(
-        (result) => {
-          console.log('Email sent:', result.text);
-          setStatus('Message sent successfully!');
-          setFormData({ name: '', email: '', message: '' }); // Clear form
-        },
-        (error) => {
-          console.error('Email error:', error.text);
-          setStatus('Error sending message. Please try again later.');
-        }
-      );
-  };
-
-  return (
-    // Add the `id` here for smooth scrolling
-    <div id="contact" className="contact-us-container">
-      <h2>Contact Us</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Your Email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-        <textarea
-          name="message"
-          placeholder="Your Message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-        />
-        <button type="submit">Send Message</button>
-      </form>
-      {status && <p className="status-message">{status}</p>}
+        </ul>
+      </div>
+      <div className="contact-col">
+       <form onSubmit={onSubmit}  >
+        <label > Your name</label>
+        <input type="text" name="name" placeholder='Enter your name' required />
+        <label > Phone Number</label>
+        <input type="tel" name="phone" placeholder='Enter your mobile number' required />
+        <label > write your messages here</label>
+          <textarea name="message"  rows='6' placeholder='Enter your message' required ></textarea>
+          <button type='submit'  className='btn dark-btn'> Send now </button>
+        
+       </form>
+       <span>{result}</span>
+      </div>
     </div>
   );
 };
 
-export default ContactUs;
+export default Contact;
