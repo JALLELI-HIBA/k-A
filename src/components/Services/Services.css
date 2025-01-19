@@ -36,11 +36,11 @@
   max-width: 30%;
 }
 
-.text-section h2 {
+.text-section h3 {
   font-size: 1.8rem;
   color: #444;
-  margin-bottom: 15px;
-  border-bottom: 2px solid #e4e4e4;
+  margin-bottom: 20px;
+  /* border-bottom: 2px solid #e4e4e4; */
   padding-bottom: 5px;
 }
 
@@ -51,7 +51,7 @@
   margin: 8px 0;
   padding-left: 10px;
   border-left: 3px solid #f2b632;
-  background-color: #fffdf4;
+  background-color: #f4faff;
 }
 
 .image-section {
