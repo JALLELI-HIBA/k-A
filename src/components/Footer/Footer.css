@@ -1,0 +1,104 @@
+.footer {
+    color: #000000;
+    text-align: center;
+    margin-top: 5%;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .footer-section {
+    flex-basis: 35%;
+    margin: 10px;
+  }
+  
+  .footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  
+  .footer-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin: 10px 0;
+  }
+  
+  .footer-section ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .footer-section ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .social-icons a {
+    font-size: 24px;
+    margin: 0 10px;
+  }
+  
+  /* Facebook original color */
+  .social-icons a:nth-child(1) {
+    color: #1877F2; /* Facebook blue */
+  }
+  
+  /* Twitter original color */
+  .social-icons a:nth-child(2) {
+    color: #1DA1F2; /* Twitter blue */
+  }
+  
+  /* Instagram original color */
+  .social-icons a:nth-child(3) {
+    color: #E4405F; /* Instagram pinkish-red */
+  }
+  
+  /* LinkedIn original color */
+  .social-icons a:nth-child(4) {
+    color: #0077B5; /* LinkedIn blue */
+  }
+  
+  .social-icons a:hover {
+    color: inherit; /* No hover color change */
+  }
+  
+  .footer-bottom {
+    background-image: url('../../assets/Fot.jpg'); /* Set the background image */
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    background-size: cover;
+    background-position: center;
+    padding: 40px 0;
+    position: relative;
+    text-align: center;
+  }
+  
+  .footer-bottom p {
+    position: absolute;
+    top: 30px; /* Adjust the distance from the top as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: white;
+    margin: 0;
+  }
+  
+  .footer-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+  }
+  
+  .footer-logo {
+          width: 145px;
+      transition: width 0.3s ease;
+
+  }

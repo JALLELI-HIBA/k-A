@@ -1,60 +1,113 @@
-.contact{
-  margin:  80px auto;
-  max-width : 60% ;
+.contact-us {
+  width: 100%;
+  margin-top: 7%;
+  background: linear-gradient(rgba(221, 222, 226, 0.7), rgba(35, 113, 186, 0.7));
+  background-size: cover;
+  background-position: center;
+  color: #fff;
   display: flex;
-  align-content: center;
-   justify-content: space-between;
-   margin-top: 7%;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 }
 
-.contact-col{
+.contact {
+  margin: 30px auto;
+  max-width: 70%;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+
+
+}
+
+.contact-col {
   flex-basis: 48%;
   color: #676767;
+  margin-top: 20px;
+
+
 }
 
 .contact-col h3 {
-  color: #000F38;
-  font-weight:  500;
-  font-size: 25px ;
+  color: #020481;
+  font-weight: 500;
+  font-size: 25px;
   display: flex;
   align-items: center;
   margin-bottom: 20px;
-
-}
-
-.contact-col h3 img {
-  width: 35px;
-  margin: 10px;
 }
 
 .contact-col p {
-  max-width: 450px;
-  list-style: 0.3;
+ 
+  font-size: 15px; /* Increased font size for better readability */
+  line-height: 1.6; /* Improved line spacing */
+ margin-bottom: 10%;
+ color: rgb(17, 16, 16);
+  
 }
+
 .contact-col ul li {
   display: flex;
   align-items: center;
-  margin: 20px 0;
+  margin: 10px 0;
+  color: #4b4b4b;
+  font-size: 17px; /* Increased font size for better readability */
+  line-height: 1.3; /* Improved line spacing */
+  transition: color 0.3s ease-in-out;
+  cursor: pointer;
+
 }
 
-.contact-col ul li img {
-  width: 25px;
-  margin-right: 10px;
-}
 
-.contact form input, .contact form textarea {
+.contact form input,
+.contact form textarea {
   display: block;
   width: 100%;
   background-color: #EBECFE;
-  padding: 15px;
+  padding: 15px; /* Increased padding for larger input fields */
   border: 0;
   outline: 0;
-  margin-bottom: 15px;
+  font-size: 15px; /* Larger font size for better usability */
+  margin-bottom: 20px;
   margin-top: 5px;
+  border-radius: 5px; /* Added subtle rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+
+  
+}
+
+.contact form textarea {
   resize: none;
+  height: 150px; /* Increased height for better visibility */
 }
 
 .contact span {
   display: block;
   margin: 20px auto;
+  color: #000F38;
+  text-align: center;
+}
+
+.contact button {
+  display: inline-block;
+  padding: 15px 30px; /* Larger button size */
+  background-color: #001e6e;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact button:hover {
+  background-color: #235D99;
+}
+
+/* Added spacing between the two contact-col sections for larger screens */
+@media (min-width: 768px) {
+  .contact {
+    gap: 80px; /* Increased space between the sections */
+  }
 }
