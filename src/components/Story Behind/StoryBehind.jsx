@@ -1,17 +1,22 @@
 import React from 'react';
-import './StoryBehind.css'; // Import the external CSS file
+import './StoryBehind.css'; 
 
-// Import images from the assets folder
-import hero from '../../assets/hero.png';
+
+import hero1 from '../../assets/hero1.jpg';
+import hero2 from '../../assets/hero2.jpg';
+import hero3 from '../../assets/hero3.jpg';
+import hero4 from '../../assets/hero4.jpg';
+import hero5 from '../../assets/hero5.jpg';
+
 
 export default function StoryBehind() {
   // Array of images to be displayed in the gallery
   const images = [
-    { src: hero, alt: 'Hero Image 1' },
-    { src: hero, alt: 'Hero Image 2' },
-    { src: hero, alt: 'Hero Image 3' },
-    { src: hero, alt: 'Hero Image 4' },
-    { src: hero, alt: 'Hero Image 5' }, // Smaller width, taller height
+    { src: hero1, alt: 'Hero Image 1' },
+    { src: hero2, alt: 'Hero Image 2' },
+    { src: hero3, alt: 'Hero Image 3' },
+    { src: hero4, alt: 'Hero Image 4' },
+    { src: hero5, alt: 'Hero Image 5' }, 
   ];
 
   return (

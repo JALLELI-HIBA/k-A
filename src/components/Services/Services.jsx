@@ -12,7 +12,7 @@ const Services = () => {
           <p>Luxury Furniture: Handcrafted furniture blending elegance and functionality.</p>
           <p>Home Décor: Unique French home decor items.</p>
           <p>Calligraphy Art: Exquisite French calligraphy pieces.</p>
-          <p>Gourmet Products: High-quality gourmet food products from France.</p>
+         
         </div>
         <div className="image-section">
           <img src={services} alt="services" />
