@@ -1,28 +1,69 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { FaMapMarkerAlt } from 'react-icons/fa';
+import map from '../../assets/WorldMap.png';
 import './Map.css';
 
+const galleries = {
+  france: [
+    'https://via.placeholder.com/300x200?text=France+Photo+1',
+    'https://via.placeholder.com/300x200?text=France+Photo+2',
+    'https://via.placeholder.com/300x200?text=France+Photo+3',
+  ],
+  saudi: [
+    'https://via.placeholder.com/300x200?text=Saudi+Photo+1',
+    'https://via.placeholder.com/300x200?text=Saudi+Photo+2',
+    'https://via.placeholder.com/300x200?text=Saudi+Photo+3',
+  ],
+};
+
 const Map = () => {
-    return (
-        <div id="map" className="Cadre">
-            <div className="left">
-                <h1>Localisation</h1>
+  const [selectedGallery, setSelectedGallery] = useState(null);
+
+  const openGallery = (gallery) => {
+    setSelectedGallery(gallery);
+  };
+
+  const closeGallery = () => {
+    setSelectedGallery(null);
+  };
+
+  return (
+    <div className="map-container">
+ 
+      <img src={map} alt="World Map" className="map-image" />
+      
+      {/* Map pin for France */}
+      <FaMapMarkerAlt
+        className="map-pin france-pin"
+        title="France"
+        onClick={() => openGallery('france')}
+      />
+      
+      {/* Map pin for Saudi Arabia */}
+      <FaMapMarkerAlt
+        className="map-pin saudi-pin"
+        title="Saudi Arabia"
+        onClick={() => openGallery('saudi')}
+      />
+
+      {/* Modal for displaying gallery */}
+      {selectedGallery && (
+        <div className="modal">
+          <div className="modal-content">
+            <button className="close-btn" onClick={closeGallery}>
+              &times;
+            </button>
+            <h2>{selectedGallery === 'france' ? 'France Gallery' : 'Saudi Arabia Gallery'}</h2>
+            <div className="gallery">
+              {galleries[selectedGallery].map((image, index) => (
+                <img key={index} src={image} alt={`Gallery ${index + 1}`} />
+              ))}
             </div>
-            <div className="MapContent">
-                <div className="Map">
-                    <iframe
-                        width="100%"
-                        height="500"
-                        frameBorder="0"
-                        scrolling="no"
-                        marginHeight="0"
-                        marginWidth="0"
-                        src="https://maps.google.com/maps?hl=en&q=46.232193,2.209667&z=2&markers=46.232193,2.209667&markers=23.8862915,46.6753&ie=UTF8&t=m&iwloc=B&output=embed"
-                        title="World Map with Markers"
-                    ></iframe>
-                </div>
-            </div>
+          </div>
         </div>
-    );
+      )}
+    </div>
+  );
 };
 
 export default Map;
