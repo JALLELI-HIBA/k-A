@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Hero from "./components/Hero/Hero.jsx";
+import Map from "./components/Map/Map.jsx";
 import AboutUs from "./components/About Us/AboutUs.jsx";
 
 import StoryBehind from "./components/Story Behind/StoryBehind.jsx";
@@ -15,7 +16,8 @@ const App = () => {
     <div>
       <Navbar />
       <Hero />
-     <StoryBehind/>
+      <Map/>
+     {/* <StoryBehind/> */}
 
      <AboutUs />
 

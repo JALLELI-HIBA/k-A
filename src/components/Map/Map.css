@@ -1,0 +1,108 @@
+:root {
+    /* Variables for France pin position */
+    --france-top: 31%; /* Default vertical position */
+    --france-left: 47.8%; /* Default horizontal position */
+    
+    /* Variables for Saudi Arabia pin position */
+    --saudi-top: 50%; /* Default vertical position */
+    --saudi-left: 59%; /* Default horizontal position */
+  }
+  
+  .map-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 100%;
+  }
+  
+  .map-image {
+    width: 90%;
+    height: auto;
+    margin-top: 100px;
+    width: 100%;
+    height: 120vh;
+
+
+  }
+  
+  .map-pin {
+    position: absolute;
+    font-size: 24px;
+    color: #007BFF;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.2s;
+  }
+  
+  .map-pin:hover {
+    transform: scale(1.2);
+    color: #0056b3;
+  }
+  
+  /* France pin with adjustable position */
+  .france-pin {
+    top: var(--france-top);
+    left: var(--france-left);
+  }
+  
+  /* Saudi Arabia pin with adjustable position */
+  .saudi-pin {
+    top: var(--saudi-top);
+    left: var(--saudi-left);
+  }
+  
+  /* Modal Styles */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .gallery {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 15px;
+  }
+  
+  .gallery img {
+    max-width: 100px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.1);
+  }
+  
