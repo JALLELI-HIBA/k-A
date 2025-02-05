@@ -7,6 +7,10 @@ import StoryBehind from "./components/Story Behind/StoryBehind.jsx";
 import ContactUs from "./components/contact Us/ContactUs.jsx";
 import Services from "./components/Services/Services.jsx";
 
+import Map from "./components/Map/Map.jsx";
+
+import Products from "./components/Products/Products.jsx";
+
 import Footer from "./components/Footer/Footer.jsx";
 
 
@@ -21,6 +25,8 @@ const App = () => {
 
      <Services/>
 <ContactUs />
+<Map/>
+<Products />
 <Footer />
      
     </div>

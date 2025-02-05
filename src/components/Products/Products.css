@@ -1,0 +1,47 @@
+/* WhereToBuy.css */
+.where-to-buy-container {
+    display: flex;
+    justify-content: center;
+    padding: 4rem 0rem;
+  }
+  
+  .where-to-buy-box {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 4rem 1.5rem;
+    background-size: cover;
+    background-position: center;
+    margin-left: 2%;
+    margin-right: 2%;
+    border-radius: 30px;
+  }
+  
+
+  
+  .where-to-buy-content {
+    position: relative;
+    z-index: 10;
+    max-width: 42rem; /* Equivalent to max-w-2xl */
+    margin: 0 auto;
+    color: white;
+    font-size: 1.25rem;
+  }
+  
+  .where-to-buy-button {
+    background-color: #ffffff; /* Equivalent to bg-blue-600 */
+    color: rgb(203, 154, 8);
+    font-size: 1.125rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+    display: inline-block;
+    margin-right: 0.5rem;       
+
+  }
+  
+ 
+  

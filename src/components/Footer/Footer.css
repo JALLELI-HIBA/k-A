@@ -71,13 +71,16 @@
   
   .footer-bottom {
     background-image: url('../../assets/Fot.jpg'); /* Set the background image */
-    border-top-right-radius: 50px;
-    border-top-left-radius: 50px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
     background-size: cover;
     background-position: center;
     padding: 40px 0;
     position: relative;
     text-align: center;
+    margin-left: 2%;
+    margin-right: 2%;
+
   }
   
   .footer-bottom p {
