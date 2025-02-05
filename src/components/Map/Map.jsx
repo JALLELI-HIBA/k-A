@@ -29,7 +29,7 @@ const Map = () => {
 
   return (
     <div className="map-container">
-     <p>Map</p> 
+ 
       <img src={map} alt="World Map" className="map-image" />
       
       {/* Map pin for France */}

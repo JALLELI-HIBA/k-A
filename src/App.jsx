@@ -7,6 +7,7 @@ import AboutUs from "./components/About Us/AboutUs.jsx";
 import StoryBehind from "./components/Story Behind/StoryBehind.jsx";
 import ContactUs from "./components/contact Us/ContactUs.jsx";
 import Services from "./components/Services/Services.jsx";
+import Products from "./components/Products/Products.jsx";
 
 import Footer from "./components/Footer/Footer.jsx";
 
@@ -23,6 +24,8 @@ const App = () => {
 
      <Services/>
 <ContactUs />
+
+<Products />
 <Footer />
      
     </div>
