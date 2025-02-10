@@ -29,40 +29,43 @@ const Map = () => {
 
   return (
     <div className="map-container">
- 
+    {/* Wrap the image inside a container with shadow */}
+    <div className="map-image-container">
       <img src={map} alt="World Map" className="map-image" />
-      
-      {/* Map pin for France */}
-      <FaMapMarkerAlt
-        className="map-pin france-pin"
-        title="France"
-        onClick={() => openGallery('france')}
-      />
-      
-      {/* Map pin for Saudi Arabia */}
-      <FaMapMarkerAlt
-        className="map-pin saudi-pin"
-        title="Saudi Arabia"
-        onClick={() => openGallery('saudi')}
-      />
-
-      {/* Modal for displaying gallery */}
-      {selectedGallery && (
-        <div className="modal">
-          <div className="modal-content">
-            <button className="close-btn" onClick={closeGallery}>
-              &times;
-            </button>
-            <h2>{selectedGallery === 'france' ? 'France Gallery' : 'Saudi Arabia Gallery'}</h2>
-            <div className="gallery">
-              {galleries[selectedGallery].map((image, index) => (
-                <img key={index} src={image} alt={`Gallery ${index + 1}`} />
-              ))}
-            </div>
+    </div>
+  
+    {/* Map pin for France */}
+    <FaMapMarkerAlt
+      className="map-pin france-pin"
+      title="France"
+      onClick={() => openGallery('france')}
+    />
+    
+    {/* Map pin for Saudi Arabia */}
+    <FaMapMarkerAlt
+      className="map-pin saudi-pin"
+      title="Saudi Arabia"
+      onClick={() => openGallery('saudi')}
+    />
+  
+    {/* Modal for displaying gallery */}
+    {selectedGallery && (
+      <div className="modal">
+        <div className="modal-content">
+          <button className="close-btn" onClick={closeGallery}>
+            &times;
+          </button>
+          <h2>{selectedGallery === 'france' ? 'France Gallery' : 'Saudi Arabia Gallery'}</h2>
+          <div className="gallery">
+            {galleries[selectedGallery].map((image, index) => (
+              <img key={index} src={image} alt={`Gallery ${index + 1}`} />
+            ))}
           </div>
         </div>
-      )}
-    </div>
+      </div>
+    )}
+  </div>
+  
   );
 };
 
