@@ -1,39 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import './Navbar.css';
-import darkLogo from '../../assets/logo.png'; // Default logo
 import logo from '../../assets/logo.png'; // Dark navbar logo
 import { Link } from 'react-scroll';
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false); // Track scroll state
-  const [showSidebar, setShowSidebar] = useState(false); // Track sidebar visibility
-  const [hideNavbar, setHideNavbar] = useState(false); // Track if navbar should be hidden
+  const [scrolled, setScrolled] = useState(false); // State to track scroll position
 
   useEffect(() => {
     const handleScroll = () => {
       const heroSection = document.querySelector('.hero');
-      const heroRect = heroSection.getBoundingClientRect();
-      const contactSection = document.querySelector('.contact');
-      const footerSection = document.querySelector('.footer'); // Footer section reference
-      
-      const contactRect = contactSection.getBoundingClientRect();
-      const footerRect = footerSection.getBoundingClientRect(); // Get footer position
-
-      // Trigger navbar change when the hero section has completely scrolled out of view
-      setScrolled(heroRect.bottom <= 0);
-
-      // Show the sidebar when the "Contact Us" section is in view, hide it when the section ends
-      if (contactRect.top <= window.innerHeight && contactRect.bottom > 0) {
-        setShowSidebar(true); // Show sidebar when "Contact Us" starts entering the viewport
-      } else {
-        setShowSidebar(false); // Hide sidebar when "Contact Us" section is no longer in view
-      }
-
-      // Hide the "scrolled" navbar after the "Contact Us" section ends, and until the footer is visible
-      if (contactRect.bottom <= 0 || footerRect.top <= window.innerHeight) {
-        setHideNavbar(true); // Set the state to hide the navbar
-      } else {
-        setHideNavbar(false); // Show navbar if "Contact Us" section is still in view
+      if (heroSection) {
+        // Check if the page has scrolled past the hero section
+        setScrolled(window.scrollY > heroSection.offsetHeight);
       }
     };
 
@@ -45,20 +23,20 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`navbar ${scrolled && !hideNavbar ? 'scrolled' : ''} ${hideNavbar ? 'hidden' : ''}`}>
+    <nav className={`${scrolled ? 'scrolled' : ''}`}>
       <img 
         src={logo} 
         alt='Logo' 
-        className={`logo ${scrolled && !hideNavbar ? 'scrolled-logo' : ''}`} 
+        className='logo' 
       />
-      <ul className={`nav-links ${scrolled && !hideNavbar ? 'sidebar' : ''} ${showSidebar ? 'show-sidebar' : ''}`}>
+      <ul>
         <li>
           <Link 
             to='hero' 
             smooth={true} 
             offset={0} 
             duration={500}
-            spy={true} /* Automatically adds 'active' class when section is in view */
+            spy={true} 
             activeClass="active"
           >
             Home
@@ -100,7 +78,6 @@ const Navbar = () => {
             Services
           </Link>
         </li>
-       
         <li>
           <Link 
             to='contact' 
@@ -109,7 +86,6 @@ const Navbar = () => {
             duration={500}
             spy={true}
             activeClass="active"
-            className={`${!scrolled ? 'btn' : ''}`} // Conditionally add btn class
           >
             Contact Us
           </Link>
