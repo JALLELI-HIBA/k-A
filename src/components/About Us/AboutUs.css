@@ -137,10 +137,10 @@ h2{
 
 /* LearnMorePage Styles */
 .learn-more-page {
-  padding-top: 120px; /* Adjust for navbar space */
   padding-left: 20px;
   padding-right: 20px;
   text-align: center;
+  margin-top: 4%;
 }
 
 .about-us-title {
@@ -207,6 +207,57 @@ h2{
 
 .learn-more-navbar .home-icon:hover {
   color: #cfb003; /* Change color when hovering over the home icon */
+}
+
+/* Main content styles */
+.learn-more-page {
+  padding-top: 60px; /* Adjust to make room for the fixed navbar */
+}
+
+.learn-more-content {
+  padding: 20px;
+}
+
+.learn-more-text {
+  margin-bottom: 20px; /* Add space between text and images */
+}
+
+/* Modify the image container layout to stack the images vertically */
+.learn-more-images {
+  display: flex;
+  flex-direction: column; /* Stack the images vertically */
+  align-items: center; /* Center all images by default */
+  gap: 20px; /* Adds some spacing between the images */
+  width: 100%; /* Ensure the container is full width */
+  margin-top: 7%;
+  
+}
+
+/* Align the first image (pic1) to the left of the entire screen */
+.learn-more-images .learn-more-image:first-child {
+  width: 100vw; /* Ensure pic1 spans across the full screen width */
+  display: flex;
+  justify-content: flex-start; /* Align pic1 to the left */
+  padding-left: 30px;
+
+}
+
+/* Align the second image (pic2) to the right of the entire screen */
+.learn-more-images .learn-more-image:nth-child(2) {
+  width: 100vw; /* Ensure pic2 spans across the full screen width */
+  display: flex;
+  justify-content: flex-end; /* Align pic2 to the right */
+  padding-right: 30px;
+
+}
+
+/* Make images inside .learn-more-image bigger */
+.right-image {
+  width: 100%; /* Adjust to full width of their container */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 800px; /* Set max width for the images */
+  max-height: 600px; /* Set max height for the images */
+  object-fit: cover; /* Ensures the image covers the container without distortion */
 }
 
 

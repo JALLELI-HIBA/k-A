@@ -10,7 +10,7 @@ const Hero = () => {
     <p>
     We are a team of passionate individuals dedicated to bridging cultures and celebrating heritage through the artistry of handcrafted treasures.
     </p>
-    <button className='btn'>Explore more <img src={dark_arrow} alt='' /></button>
+    {/* <button className='btn'>Explore more <img src={dark_arrow} alt='' /></button> */}
 </div>
     </div>
   )

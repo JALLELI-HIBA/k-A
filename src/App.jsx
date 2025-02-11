@@ -26,6 +26,7 @@ const App = () => {
         <>
           <Hero />
           <AboutUs setView={setView} /> {/* Use setView */}
+          <StoryBehind />
           <Services />
           <Map />
           <ContactUs />

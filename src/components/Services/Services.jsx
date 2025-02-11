@@ -1,29 +1,51 @@
 import React from 'react';
 import './Services.css';
-import services from '../../assets/import-export.jpg';
 
 const Services = () => {
   return (
-    <div  id="services" className="services-container">
+    <div id='services' className="services-container">
       <h1 className="services-title">Our Services</h1>
-      <div className="content-wrapper">
-        <div className="text-section">
-          <h3>Export to Saudi Arabia:</h3>
-          <p>Luxury Furniture: Handcrafted furniture blending elegance and functionality.</p>
-          <p>Home Décor: Unique French home decor items.</p>
-          <p>Calligraphy Art: Exquisite French calligraphy pieces.</p>
-         
+
+      <div className="services-grid">
+        {/* Sourcing Section */}
+        <div className="service-card">
+          <p className="service-title">Sourcing</p>
+          <p className="service-description">
+            At K&A, we are dedicated to carefully selecting partners who use the highest-quality, authentic materials.
+            Additionally, we will work with local partners in France, known for their embodiment of French luxury.
+          </p>
         </div>
-        <div className="image-section">
-          <img src={services} alt="services" />
+
+        {/* Products Section */}
+        <div className="service-card">
+          <p className="service-title">Products</p>
+          <p className="service-description">
+            Each of our products authentically reflects its cultural origin, offering customers a meaningful connection to the heritage behind it.
+            Authenticity is at the core of everything we offer, ensuring that every item tells a true story of tradition.
+            <strong>We place the highest priority on sourcing exceptional, top-tier products.</strong>
+          </p>
         </div>
-        <div className="text-section">
-          <h3>Export to France:</h3>
-          <p>Handmade Jewelry: Elegant pieces reflecting Saudi heritage.</p>
-          <p>Original Perfumes: Exclusive fragrances with traditional Arabian scents.</p>
-          <p>Oud: Rare and precious oud wood and oils.</p>
-          <p>Traditional Crafts: A variety of handmade items showcasing Saudi artistry.</p>
+
+        {/* Transport Section */}
+        <div className="service-card">
+          <p className="service-title">Transport</p>
+          <p className="service-description">
+            To ensure safe and efficient delivery, K&A will collaborate with reputable local shipping companies. This partnership focuses on:
+          </p>
+          <ul className="service-list">
+            <li>Safe Delivery: Guaranteeing that products arrive in perfect condition.</li>
+            <li>Efficient Coordination: Working closely with shipping partners for timely and reliable transport.</li>
+            <li>Sustainability: Prioritizing eco-friendly practices in our logistics operations.</li>
+          </ul>
         </div>
+      </div>
+
+      {/* E-commerce Section */}
+      <div className="ecommerce-section">
+        <p className="ecommerce-description">
+          Our products are available on our own e-commerce website as well as through popular regional platforms in both France and Saudi Arabia,
+          broadening our reach to customers looking for premium items.
+        </p>
       </div>
     </div>
   );
