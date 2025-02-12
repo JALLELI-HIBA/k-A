@@ -144,30 +144,27 @@ h2{
 }
 
 .about-us-title {
-  font-size: 16rem;
+  font-size: 1.5rem;
+  font-weight: bold;
   color: #212EA0;
   margin-bottom: 60px;
   text-transform: uppercase;
-
-
+  font-family: Arial, sans-serif;
+  
+  /* Align the title inside its parent container */
+  display: block; /* Makes the title a block-level element */
+  margin-left: auto; /* Auto margins to center it horizontally */
+  margin-right: auto; /* Auto margins to center it horizontally */
+  text-align: center; /* Ensures text is centered inside the title element */
 }
 
+
 .learn-more-content {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.learn-more-page .about-us-title {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
 
-.learn-more-page h3 {
-  margin-top: 30px;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
 
 .learn-more-page p {
   font-size: 1rem;
@@ -219,49 +216,67 @@ h2{
 }
 
 .learn-more-text {
-  margin-bottom: 20px; /* Add space between text and images */
+  display: flex;
+  flex-direction: row; /* Align cards in a row */
+  gap: 20px; /* Add space between the cards */
+  margin-bottom: 20px; /* Add space below the cards */
+  flex-wrap: wrap; /* Allow wrapping on small screens */
 }
 
-/* Modify the image container layout to stack the images vertically */
-.learn-more-images {
-  display: flex;
-  flex-direction: column; /* Stack the images vertically */
-  align-items: center; /* Center all images by default */
-  gap: 20px; /* Adds some spacing between the images */
-  width: 100%; /* Ensure the container is full width */
-  margin-top: 7%;
+/* Card Styles */
+.card {
+  background-color: #f9f9f9; /* Light background for the card */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 20px; /* Padding inside the card */
+  margin-bottom: 20px; /* Space between cards */
+  width: 100%; /* Full width for each card */
+  max-width: 800px; /* Maximum width of the card */
+  margin: 0 auto; /* Center the card */
+  flex: 1 1 48%; /* Cards will take up 48% of the width, allowing space between them */
+  max-width: 800px; /* Maintain the max width */
+}
+
+/* Mission Card */
+.mission-card {
+  border-left: 4px solid #212EA0; /* Blue left border for Mission card */
+}
+
+/* Vision Card */
+.vision-card {
+  border-left: 4px solid #cfb003; /* Golden left border for Vision card */
+}
+
+.learn-more-text h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #212EA0;
+  margin-bottom: 10px;
   
 }
 
-/* Align the first image (pic1) to the left of the entire screen */
-.learn-more-images .learn-more-image:first-child {
-  width: 100vw; /* Ensure pic1 spans across the full screen width */
-  display: flex;
-  justify-content: flex-start; /* Align pic1 to the left */
-  padding-left: 30px;
-
+/* Modify the image container layout to display images side by side */
+.learn-more-images {
+  display: flex; /* Arrange items in a row */
+  flex-direction: row; /* Ensure images are in a row (side by side) */
+  justify-content: center; /* Center the images horizontally */
+  gap: 20px; /* Adds some spacing between the images */
+  margin-top: 7%;
 }
 
-/* Align the second image (pic2) to the right of the entire screen */
-.learn-more-images .learn-more-image:nth-child(2) {
-  width: 100vw; /* Ensure pic2 spans across the full screen width */
+/* Ensure the first image (pic1) and the second image (pic2) are properly aligned */
+.learn-more-images .learn-more-image {
   display: flex;
-  justify-content: flex-end; /* Align pic2 to the right */
-  padding-right: 30px;
-
+  justify-content: center; /* Center the images within each container */
+  flex: 1; /* Allow each image container to take equal space */
 }
 
-/* Make images inside .learn-more-image bigger */
+/* Make images larger without changing their max-width and height */
 .right-image {
-  width: 100%; /* Adjust to full width of their container */
+  width: 100%; /* Ensure the image takes the full width of its container */
   height: auto; /* Maintain aspect ratio */
-  max-width: 800px; /* Set max width for the images */
-  max-height: 600px; /* Set max height for the images */
-  object-fit: cover; /* Ensures the image covers the container without distortion */
+  object-fit: cover; /* Ensure the image covers the container without distortion */
 }
-
-
-
 
 /* Responsive Styles */
 @media (max-width: 768px) {
@@ -277,5 +292,39 @@ h2{
   .learn-more-content {
     padding: 10px;
   }
+
+  /* Adjust layout for mobile devices */
+  .learn-more-images {
+    flex-direction: column; /* Stack images vertically on small screens */
+  }
+
+  .right-image {
+    max-width: 100%; /* Ensure the image takes full width on small screens */
+    max-height: none; /* Remove height constraint on small screens */
+  }
+}
+/* Update the layout of the text container to make cards side by side */
+.learn-more-text {
+  display: flex;
+  flex-direction: row; /* Align cards in a row */
+  gap: 20px; /* Add space between the cards */
+  margin-bottom: 20px; /* Add space below the cards */
+  flex-wrap: wrap; /* Allow wrapping on small screens */
 }
 
+/* Ensure cards don't take up too much space on larger screens */
+.card {
+  flex: 1 1 48%; /* Cards will take up 48% of the width, allowing space between them */
+  max-width: 800px; /* Maintain the max width */
+}
+
+/* Adjust card widths and alignment on small screens */
+@media (max-width: 768px) {
+  .learn-more-text {
+    flex-direction: column; /* Stack cards vertically on smaller screens */
+  }
+
+  .card {
+    flex: 1 1 100%; /* Allow cards to take full width on small screens */
+  }
+}
